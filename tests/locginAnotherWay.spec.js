@@ -1,21 +1,18 @@
 const {test, expect} = require(`@playwright/test`);
-const { count } = require("node:console");
 
 test("End to end test for e-commerse site", async({page})=> {
 
     const myEmail = "igcpa@gmail.com"
-    const email = page.locator("[id='userEmail']")
-    const password = page.locator("[id='userPassword']")
-    const titleText = page.locator(".card-body b").nth(0)
-    const submit = page.locator("[id='login']")
+    const email = page.getByPlaceholder("email@example.com")
+    const password = page.getByPlaceholder("enter your passsword")
+    const login = page.getByRole("button", {name: "Login"})
     const listItems = page.locator(".card-body")
-    const loader = page.locator('ngx-spinner-overlay ng-tns-c31-1 ng-trigger ng-trigger-fadeIn ng-star-inserted')
     const cart = page.locator("//button[@routerlink='/dashboard/cart']//label")
     const toastMsg = page.locator("//div[@aria-label='Product Added To Cart']")
-    const cartTitle = page.locator("//div[@class='heading cf']//h1")
+    const cartTitle = page.getByText("My Cart")
     const itemNumber = page.locator("p.itemNumber")
     const selectedItem = page.locator("//div[@class='cartSection']//h3")
-    const checkouButton= page.locator('button',{hasText : 'Checkout'})
+    const checkouButton= page.getByRole('button',{name : 'Checkout'})
     const creditCard = page.locator("[placeholder='Select Country']")
     const expiryMonth = page.locator("(//select[@class='input ddl'])[1]")
     const expiryDate = page.locator("(//select[@class='input ddl'])[2]")
@@ -25,24 +22,19 @@ test("End to end test for e-commerse site", async({page})=> {
     const couponApply = page.locator("button",{hasText : 'Apply Coupon'})
     const couponValidation = page.locator("//div[@class='field small']//p[1]")
     const shoppingEmail = page.locator(".user__name [type='text']").first()
-    const countryDropdown = page.locator("//input[@placeholder='Select Country']")
-    const listItem = page.locator("//div[@class='form-group']//section[1]")
-    const placeOrderBtn = page.locator("//a[normalize-space(text())='Place Order']")
+    const countryDropdown = page.getByPlaceholder("Select Country")
+    const listItem = page.locator(".ta-results list-group ng-star-inserted")
+    const australiaButton = page.getByRole('button', {name:'Australia'})
+
+    const placeOrderBtn = page.getByText("PLACE ORDER")
     const orderConfirmnedID = page.locator("//tr[@class='ng-star-inserted']//label")
     const historyPage = page.locator("//label[normalize-space(text())='Orders History Page']")
     await page.goto("https://rahulshettyacademy.com/client/#/auth/login")
     await email.fill(myEmail)
     await password.fill("0773379002Chanaka!")
-    await submit.click()
+    await login.click()
     await page.waitForLoadState('networkidle');
-    await listItems.first().waitFor();
-    const listCount = await listItems.count();
-    for (let i=0; i<listCount; i++) {
-        if (await listItems.nth(i).locator("b").textContent() === "ADIDAS ORIGINAL") {
-            await listItems.nth(i).locator("text= Add To Cart").click();
-            break;
-        }
-    }
+    await listItems.filter({hasText:'ADIDAS ORIGINAL'}).getByRole("button",{name:" Add To Cart"}).click();
     await page.waitForTimeout(2000)
     const cartCount = parseInt(await cart.textContent())
     expect(cartCount).toBeLessThanOrEqual(1);
@@ -50,13 +42,10 @@ test("End to end test for e-commerse site", async({page})=> {
     expect(msg).toEqual("Product Added To Cart")
     await cart.click();
     await cartTitle.waitFor({state: 'visible'})
-
     await expect(cartTitle).toHaveText("My Cart")
     await expect(selectedItem).toHaveText("ADIDAS ORIGINAL")
     await checkouButton.click();
-
     await page.waitForTimeout(4000)
-
     await creditCard.fill("Sri Lanka");
     await expiryMonth.selectOption("10")
     await expiryDate.selectOption("25")
@@ -68,13 +57,11 @@ test("End to end test for e-commerse site", async({page})=> {
     await couponValidation.waitFor({state:'visible'})
     expect (couponValidation).toContainText("Coupon Applied")
     await shoppingEmail.textContent().then( value => {
-        expect(value).toContain(myEmail)
+        expect (value).toContain(myEmail)
     })
     await countryDropdown.click().then(countryDropdown.clear());
     await countryDropdown.pressSequentially("Aus");
-    await listItem.waitFor({state:'visible'})
-    await listItem.filter({hasText: 'Austria'}).click();
-
+    await australiaButton.click();
     await placeOrderBtn.click();
     const orderText = await orderConfirmnedID.textContent();
     const ordereID = orderText ? orderText.replace(/[|\s]/g, ''): null;
@@ -85,11 +72,7 @@ test("End to end test for e-commerse site", async({page})=> {
     //     expect(value).toEqual(itmNumb)
     // })
     await page.waitForTimeout(5000)
-    const row =page.locator("//tbody//tr")
-    const selectedROw = row.filter({ hasText: ordereID });
-
-    const prodName = (await selectedROw.locator('td').nth(1).textContent())
+    const prodName =await page.locator("//tbody//tr").filter({ hasText: ordereID }).locator('td').nth(1).textContent();
+    console.log(prodName)
     expect (prodName).toEqual("ADIDAS ORIGINAL")
-    await selectedROw.locator('td').nth(4).click();
-    await page.waitForTimeout(3000)
 });
