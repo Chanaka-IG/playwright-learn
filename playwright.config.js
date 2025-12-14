@@ -27,7 +27,7 @@ const config = ({
     headless: false,
     screenshot : 'retain-on-failure',
     trace: 'retain-on-failure',
-    video: 'retain-on-failure'    
+    video: 'on'   
   }
 
 
