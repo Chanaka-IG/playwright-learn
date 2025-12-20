@@ -54,33 +54,3 @@ test("End to end test for e-commerse site", async ({ page }) => {
     console.log(prodName)
     expect(prodName).toEqual("ADIDAS ORIGINAL")
 });
-
-
-// test("Get AccessTOken", async () => {
-//     const dataSet = {client_id: "public_rest_api_client", grant_type: "password",username: "_ohrmSysAdmin_", password: "admin@OHRM123"};
-//     const employee = [{
-//     firstName: "Parindi",
-//     middleName: "Nadeesha",
-//     lastName: "Senanayaka",
-//     locationId: "2",
-//     joinedDate: "2022-05-02",
-//     chkLogin: false,
-//     autoGenerateEmployeeId: true
-// },
-// {
-//     firstName: "Kavindu",
-//     middleName: "anuradha",
-//     lastName: "Perera",
-//     locationId: "2",
-//     joinedDate: "2022-05-02",
-//     chkLogin: false,
-//     autoGenerateEmployeeId: true
-// }
-// ]
-//     const apiContext = await request.newContext();
-//     const apiOrange = new APiOrange(apiContext,dataSet);
-//     const token = await apiOrange.getAccessToken();
-//     console.log(token);
-//     const employeeResponseMsg = await apiOrange.createEmployee(employee);
-
-// })

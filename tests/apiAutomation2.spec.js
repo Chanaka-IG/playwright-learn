@@ -52,6 +52,8 @@ test('API automation part 2', async () => {
     await page.goto("https://rahulshettyacademy.com/client/#/auth/login")
     await listItems.first().waitFor();
     const listCount = await listItems.count();
+    await page.on("request", request => console.log(request.url()))
+    await page.on("response", response => console.log(response.url(), response.status()))
     for (let i = 0; i < listCount; i++) {
         if (await listItems.nth(i).locator("b").textContent() === "ADIDAS ORIGINAL") {
             await listItems.nth(i).locator("text= Add To Cart").click();
