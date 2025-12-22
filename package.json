@@ -2,8 +2,8 @@
   "name": "playwright-learn",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": { 
-    "test" : "playwright test"
+  "scripts": {
+    "test": "playwright test"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +12,8 @@
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@types/node": "^24.10.1"
+  },
+  "dependencies": {
+    "exceljs": "^4.4.0"
   }
 }
