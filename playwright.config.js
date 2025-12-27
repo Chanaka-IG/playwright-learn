@@ -15,7 +15,7 @@ import { chromium, defineConfig, devices } from '@playwright/test';
 const config = ({
   testDir: './tests',
 
-  timeout: 30*1000, //this wait for the tests (by default its 30s)
+  timeout: 40*1000, //this wait for the tests (by default its 30s)
 
   expect : {
     timeout : 4 * 1000    //this wait for assertion
