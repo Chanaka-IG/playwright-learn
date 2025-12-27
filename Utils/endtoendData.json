@@ -1,0 +1,27 @@
+[
+{
+     "myEmail": "igcpa@gmail.com",
+     "password" : "0773379002Chanaka!",
+     "item": "ADIDAS ORIGINAL",
+     "creditCCardCountry": "Sri Lanka",
+     "expiryMMonth":"10",
+     "expiryDDate": "25",
+     "cvv": "123",
+     "nameOnCCard": "Chanaka Prasad",
+     "coupon": "rahulshettyacademy"
+
+},
+{
+     "myEmail": "igcpa@gmail.com",
+     "password" : "0773379002Chanaka!",
+     "item": "ZARA COAT 3",
+     "creditCCardCountry": "Sri Lanka",
+     "expiryMMonth":"10",
+     "expiryDDate": "25",
+     "cvv": "123",
+     "nameOnCCard": "Chanaka Prasad",
+     "coupon": "rahulshettyacademy"
+
+}
+
+]
