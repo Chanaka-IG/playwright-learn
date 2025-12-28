@@ -1,6 +1,6 @@
 const { test, expect, request } = require('@playwright/test')
-const { APiUtils } = require('./Utils/APiutils')
-const { APiOrange } = require('./Utils/APiOrange');
+const { APiUtils } = require('../Utils/APiutils')
+const { APiOrange } = require('../Utils/APiOrange');
 const { text } = require('stream/consumers');
 const fakeBody = { data: [], message: "No Orders" }
 

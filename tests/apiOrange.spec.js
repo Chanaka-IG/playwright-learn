@@ -1,5 +1,5 @@
 const {test,expect,request} = require('@playwright/test')
-const {APiOrange} = require('./Utils/APiOrange') 
+const {APiOrange} = require('../Utils/APiOrange') 
 
 
 // test.beforeAll("Get AccessTOken", async () => {

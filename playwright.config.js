@@ -1,5 +1,5 @@
 // @ts-check
-import { chromium, defineConfig, devices } from '@playwright/test';
+import { chromium } from '@playwright/test';
 
 /**
  * Read environment variables from file.
@@ -16,6 +16,8 @@ const config = ({
   testDir: './tests',
 
   timeout: 30*1000, //this wait for the tests (by default its 30s)
+  retries: 1,   //retry failed test once
+  workers: 1,    //parallel test execution (two at a time)
 
   expect : {
     timeout : 4 * 1000    //this wait for assertion
