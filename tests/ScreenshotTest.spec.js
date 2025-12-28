@@ -28,7 +28,7 @@ test ("Validate Screenshots", async({page}) => {
 
 })
 
-test.only ("Validate Compare Screenshots", async({page}) => {
+test ("Validate Compare Screenshots", async({page}) => {
   
   const userName = page.locator("#txtUsername")
   const passwordField = page.locator("#txtPassword")
