@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","21060","End to end test for e-commerse site ADIDAS ORIGINAL","","2025-12-29","passed","2025-12-29","","endtoend.spec.js","",""
+"","20047","End to end test for e-commerse site ZARA COAT 3","","2025-12-29","passed","2025-12-29","","endtoend.spec.js","",""
+"","2540","End to end test for e-commerse site","","2025-12-29","passed","2025-12-29","","endtoend.spec.js","",""
+"","3","@QW Security test request intercept","","2025-12-29","failed","2025-12-29","","WebIntercept2.spec.js","",""

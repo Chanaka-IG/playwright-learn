@@ -23,10 +23,10 @@ const config = ({
     timeout : 4 * 1000    //this wait for assertion
   },
 
-  reporter : 'html',   //report
+  reporter : [["line"], ["allure-playwright"]],   //report
   use: {
     browser : chromium,
-    headless: false,
+    headless: true,
     screenshot : 'retain-on-failure',
     trace: 'on',
     video: 'on'   

@@ -7,23 +7,20 @@ class APiOrange {
     }
 
     async getAccessToken() {
-
         let responses = {}
-
-        const response = await this.apiContext.post('https://puma09-temp14-kord.orangehrm.com/oauth/issueToken', {
+        const response = await this.apiContext.post('https://puma30n-lts-kord.orangehrm.com/oauth/issueToken', {
             data: this.dataSet
         })
         const responseJson = await response.json();
-
         responses.token = responseJson.access_token;
         return responses.token;
     }
 
     async createEmployee(employee, token) {
-
+        console.log(token)
         employee = Array.isArray(employee) ? employee : [employee];
         for (const val of employee) {
-            const response = await this.apiContext.post('https://puma09-temp14-kord.orangehrm.com/api/employees', {
+            const response = await this.apiContext.post('https://puma30n-lts-kord.orangehrm.com/api/employees', {
                 data: val,
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -40,16 +37,14 @@ class APiOrange {
         console.log(nationality.name)
         console.log(token)
 
-        const nationalityResponse = await this.apiContext.post('https://puma09-temp14-kord.orangehrm.com/api/nationality', {
+        const nationalityResponse = await this.apiContext.post('https://puma30n-lts-kord.orangehrm.com/api/nationality', {
             data: nationality,
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         })
         expect(nationalityResponse.ok()).toBeTruthy();
-        const responseJson = await nationalityResponse.json();
-        console.log(responseJson);
-
+        const responseJson = await nationalityResponse.json();        
     }
 }
 module.exports = { APiOrange };
