@@ -1,0 +1,1 @@
+{"total":2,"items":[{"uid":"bac44fe4e1004c5ff59405823ab76d71","name":"WebIntercept2.spec.js","statistic":{"failed":1,"broken":0,"skipped":0,"passed":0,"unknown":0,"total":1}},{"uid":"e26fcc747596b666f3db4359129a9d1e","name":"endtoend.spec.js","statistic":{"failed":0,"broken":0,"skipped":0,"passed":3,"unknown":0,"total":3}}]}
