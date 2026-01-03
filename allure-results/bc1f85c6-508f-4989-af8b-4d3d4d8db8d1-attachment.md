@@ -1,0 +1,81 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - img [ref=e6]
+    - generic [ref=e8]:
+      - img [ref=e10]
+      - generic [ref=e11]:
+        - img [ref=e12]
+        - text: Login
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - img [ref=e15]
+          - textbox "Username" [ref=e16]
+        - generic [ref=e17]:
+          - img [ref=e18]
+          - textbox "Password" [ref=e19]
+          - generic [ref=e20]:
+            - img "Show Password" [ref=e21]
+            - img "Hide Password" [ref=e22]
+        - generic [ref=e24]:
+          - checkbox "Keep me logged in for 30 days" [ref=e25]
+          - text: Keep me logged in for 30 days
+          - img
+        - button "Login" [ref=e27]:
+          - text: Login
+          - img [ref=e28]
+  - iframe [ref=e30]:
+    - generic [ref=f1e2]:
+      - generic [ref=f1e5]:
+        - generic [ref=f1e6]:
+          - heading "Plan. Assign. Succeed." [level=1] [ref=f1e7]
+          - heading "The Future of Employee Scheduling is Here" [level=1] [ref=f1e8]
+        - heading "Team-based scheduling, flexible views, and effortless drag-and-drop shift planning" [level=2] [ref=f1e10]
+        - link "Explore Now!" [ref=f1e13] [cursor=pointer]:
+          - /url: https://orangehrm.com/en/solutions/compensation/roster
+      - generic [ref=f1e16]:
+        - generic [ref=f1e17]:
+          - heading "Accessible. Analytical. Actionable." [level=1] [ref=f1e18]
+          - heading "Unlock Workforce Insights with Live Data." [level=1] [ref=f1e19]
+        - heading "Gain instant access and seamless synchronization of all your critical HR data, enabling powerful visualization and customized dashboard creation directly with Power BI." [level=2] [ref=f1e21]:
+          - text: Gain instant access and seamless synchronization of all your critical HR data, enabling powerful visualization and customized dashboard creation directly with
+          - generic [ref=f1e22]: Power BI.
+        - link "Explore Now!" [ref=f1e25] [cursor=pointer]:
+          - /url: https://orangehrm.com/en/contact-sales?utm_source=in+app&utm_campaign=power+bi&utm_term=power+bi+in+app
+      - generic [ref=f1e28]:
+        - generic [ref=f1e29]:
+          - heading "Fair. Secure. Accountable." [level=1] [ref=f1e30]
+          - heading "Resolve Disciplinary Cases with Confidence." [level=1] [ref=f1e31]
+        - heading "Structured investigations, automated document generation, and transparent reporting for a fair disciplinary process with OrangeHRM." [level=2] [ref=f1e33]
+        - link "Explore Now!" [ref=f1e36] [cursor=pointer]:
+          - /url: https://www.orangehrm.com/en/solutions/culture/discipline
+      - generic [ref=f1e39]:
+        - generic [ref=f1e40]:
+          - heading "Fair. Fast. Confidential." [level=1] [ref=f1e41]
+          - heading "Employee Voice Made Simple!" [level=1] [ref=f1e42]
+        - heading "Custom workflows, anonymous submissions, and quick resolutions with OrangeHRM" [level=2] [ref=f1e44]
+        - link "Explore Now!" [ref=f1e47] [cursor=pointer]:
+          - /url: https://orangehrm.com/en/solutions/culture/grievances
+  - generic [ref=e31]:
+    - generic [ref=e32]:
+      - text: OrangeHRM 7.18.0.1-VAS
+      - text: © 2005 - 2026
+      - link "OrangeHRM, Inc" [ref=e33] [cursor=pointer]:
+        - /url: http://www.orangehrm.com
+      - text: . All rights reserved.
+    - generic [ref=e34]:
+      - link [ref=e35] [cursor=pointer]:
+        - /url: https://www.linkedin.com/company/orangehrm
+        - img [ref=e36]
+      - link [ref=e37] [cursor=pointer]:
+        - /url: https://www.facebook.com/OrangeHRM
+        - img [ref=e38]
+      - link [ref=e39] [cursor=pointer]:
+        - /url: https://twitter.com/orangehrm
+        - img [ref=e40]
+      - link [ref=e41] [cursor=pointer]:
+        - /url: https://www.youtube.com/user/orangehrm
+        - img [ref=e42]
+```
